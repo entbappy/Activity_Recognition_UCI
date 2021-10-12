@@ -1,0 +1,17 @@
+
+data_source: https://archive.ics.uci.edu/ml/machine-learning-databases/00366/AReM.zip
+
+artifacts: 
+  artifacts_dir: artifacts
+  raw_local_dir: raw_data_local_dir
+  raw_local_file: data.csv
+
+  split_data_dir: split_data_dir
+  train: train.csv
+  test: test.csv
+
+  model_dir: model_dir
+  model_filename: ElasticNet.model
+
+  reports_dir: reports_dir
+  scores: scores.json

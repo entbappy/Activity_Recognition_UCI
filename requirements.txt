@@ -1,0 +1,10 @@
+dvc
+pandas
+scikit-learn
+pandas-profiling
+numpy
+joblib
+PyYAML
+
+#local pacages-
+-e .
