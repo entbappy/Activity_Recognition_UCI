@@ -9,13 +9,14 @@ artifacts:
   raw_local_file: data.csv
   EDA_reports_dir: EDA_reports_dir
   EDA_reports_file: EDA_Reports.html
+  clean_data_dir: clean_data_dir
   
   split_data_dir: split_data_dir
   train: train.csv
   test: test.csv
 
   model_dir: model_dir
-  model_filename: ElasticNet.model
+  model_filename: logistic.model
 
   reports_dir: reports_dir
   scores: scores.json

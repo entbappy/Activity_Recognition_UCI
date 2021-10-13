@@ -392,4 +392,15 @@ stages:
     outs:
       - artifacts/EDA_reports_dir/EDA_Reports.html
 
+  missing_value:
+    cmd: python src/stage_05_handle_missing_data.py --config=config/config.yaml
+    deps:
+      - src/stage_05_handle_missing_data.py
+      - src/utils/all_utils.py
+      - config/config.yaml
+      - artifacts/merge_data_dir/data.csv
+      - artifacts/EDA_reports_dir/EDA_Reports.html
+    outs:
+      - artifacts/clean_data_dir/data.csv
+
 

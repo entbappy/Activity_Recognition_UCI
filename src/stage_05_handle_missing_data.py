@@ -25,17 +25,26 @@ def handle_missing_value(config_path):
 
     merge_data_dir = config['artifacts']['merge_data_dir']
     raw_local_file = config['artifacts']['raw_local_file']
+    clean_data_dir = config['artifacts']['clean_data_dir']
+
+    clean_data_save_dir = os.path.join(artifacts_dir, clean_data_dir)
+    clean_data_file = os.path.join(clean_data_save_dir, raw_local_file)
 
 
-
-    create_directory(dirs=[EDA_reports_save_dir])
+    create_directory(dirs=[clean_data_save_dir])
 
     merge_data_save_dir = os.path.join(artifacts_dir, merge_data_dir)
     merge_data_save_file_name = os.path.join(merge_data_save_dir, raw_local_file)
+
+    df = pd.read_csv(merge_data_save_file_name)
+    logging.info(f'Data shape before null removed: {df.shape}')
+    df.dropna(inplace=True)
+    logging.info(f'Data shape after null removed:{df.shape}')
+    logging.info(f'Data shape after null removed:{df.isnull().sum()}')
     
-
-
-    logging.info(f'EDA reports has been generated successfully to {EDA_reports_save_file}')
+    df.to_csv(clean_data_file, sep=',', index = False)
+    
+    logging.info(f'Null values have been removed successfully to {clean_data_file}')
 
 
 

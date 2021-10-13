@@ -4,8 +4,8 @@ stages:
     cmd: python src/stage_01_download_remote_data.py --config=config/config.yaml
     deps:
     - path: config/config.yaml
-      md5: 4791ea1e1fa11c80fbdc0109d09648dc
-      size: 534
+      md5: 45781688c23a5eb070512fc2cd3e86e7
+      size: 566
     - path: src/stage_01_download_remote_data.py
       md5: d6d9008c3bbe851229ebc345d2a267d5
       size: 1919
@@ -284,7 +284,7 @@ stages:
       md5: 15c173c7b7321e53e91763742dea1701
       size: 18909
     - path: logs/running_logs.log
-      md5: 64bd9bc36f219d2027637e37f76cd302
+      md5: 08962ef0245902cbc571b2b512cbaef9
       size: 513
   handle_data:
     cmd: python src/stage_02_data_exception_handle.py --config=config/config.yaml
@@ -560,10 +560,10 @@ stages:
       md5: 15c173c7b7321e53e91763742dea1701
       size: 18909
     - path: config/config.yaml
-      md5: 4791ea1e1fa11c80fbdc0109d09648dc
-      size: 534
+      md5: 45781688c23a5eb070512fc2cd3e86e7
+      size: 566
     - path: logs/running_logs.log
-      md5: 03f20af9718596e93bb22f50616ad37b
+      md5: 3de55137f59839e9b9ad1ed42934b316
       size: 826
     - path: src/stage_02_data_exception_handle.py
       md5: a2c6b07fea92c43545e77eaf343469cd
@@ -1104,8 +1104,8 @@ stages:
       md5: e1a4bfa874093be1fd625c830d244140
       size: 19312
     - path: config/config.yaml
-      md5: 4791ea1e1fa11c80fbdc0109d09648dc
-      size: 534
+      md5: 45781688c23a5eb070512fc2cd3e86e7
+      size: 566
     - path: src/stage_03_merge_all_data.py
       md5: a2a416b79654790dd528f430eec1354c
       size: 2365
@@ -1123,8 +1123,8 @@ stages:
       md5: 6296f70380a776d3be288f76fe9b6487
       size: 1626633
     - path: config/config.yaml
-      md5: 4791ea1e1fa11c80fbdc0109d09648dc
-      size: 534
+      md5: 45781688c23a5eb070512fc2cd3e86e7
+      size: 566
     - path: src/stage_04_EDA.py
       md5: 98d5642fce1043d1a611b8a23791b313
       size: 1933
@@ -1133,5 +1133,27 @@ stages:
       size: 718
     outs:
     - path: artifacts/EDA_reports_dir/EDA_Reports.html
-      md5: e1e5093559aad4152e53d22984a6c2aa
-      size: 2472997
+      md5: b9303ddceddbba261b1e9fa5eefa2312
+      size: 2473004
+  missing_value:
+    cmd: python src/stage_05_handle_missing_data.py --config=config/config.yaml
+    deps:
+    - path: artifacts/EDA_reports_dir/EDA_Reports.html
+      md5: b9303ddceddbba261b1e9fa5eefa2312
+      size: 2473004
+    - path: artifacts/merge_data_dir/data.csv
+      md5: 6296f70380a776d3be288f76fe9b6487
+      size: 1626633
+    - path: config/config.yaml
+      md5: 45781688c23a5eb070512fc2cd3e86e7
+      size: 566
+    - path: src/stage_05_handle_missing_data.py
+      md5: d966263b1cf9d0e7652d5db9ed8f81bd
+      size: 2034
+    - path: src/utils/all_utils.py
+      md5: dd6608c8a3e314435aed7759830c9f01
+      size: 718
+    outs:
+    - path: artifacts/clean_data_dir/data.csv
+      md5: 613138846aa9dd26da920b4d8f2d522f
+      size: 1618953
