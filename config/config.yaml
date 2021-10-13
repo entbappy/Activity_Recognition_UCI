@@ -7,6 +7,8 @@ artifacts:
   modified_data_dir: modified_data_dir
   merge_data_dir: merge_data_dir
   raw_local_file: data.csv
+  EDA_reports_dir: EDA_reports_dir
+  EDA_reports_file: EDA_Reports.html
   
   split_data_dir: split_data_dir
   train: train.csv

@@ -379,8 +379,17 @@ stages:
       - artifacts/modified_data_dir/walking/dataset13.csv
       - artifacts/modified_data_dir/walking/dataset14.csv
       - artifacts/modified_data_dir/walking/dataset15.csv
-
     outs:
       - artifacts/merge_data_dir/data.csv
+
+  EDA_reports:
+    cmd: python src/stage_04_EDA.py --config=config/config.yaml
+    deps:
+      - src/stage_04_EDA.py
+      - src/utils/all_utils.py
+      - config/config.yaml
+      - artifacts/merge_data_dir/data.csv
+    outs:
+      - artifacts/EDA_reports_dir/EDA_Reports.html
 
 
