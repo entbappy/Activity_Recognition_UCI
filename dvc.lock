@@ -4,11 +4,11 @@ stages:
     cmd: python src/stage_01_download_remote_data.py --config=config/config.yaml
     deps:
     - path: config/config.yaml
-      md5: 1a80c24e5dc44f1b9dbc9ffef69db70f
-      size: 426
+      md5: ae20c6f7cd8c3447a3d188d18a7f5420
+      size: 460
     - path: src/stage_01_download_remote_data.py
-      md5: b151a9e28fc59c33e8e96050d1099715
-      size: 1839
+      md5: d6d9008c3bbe851229ebc345d2a267d5
+      size: 1919
     - path: src/utils/all_utils.py
       md5: dd6608c8a3e314435aed7759830c9f01
       size: 718
@@ -284,7 +284,7 @@ stages:
       md5: 15c173c7b7321e53e91763742dea1701
       size: 18909
     - path: logs/running_logs.log
-      md5: 6951bae1e2569d0a821559dfef81b032
+      md5: d5112d6c0cb4c9d7622e0537dbb49dd3
       size: 513
   handle_data:
     cmd: python src/stage_02_data_exception_handle.py --config=config/config.yaml
@@ -560,14 +560,14 @@ stages:
       md5: 15c173c7b7321e53e91763742dea1701
       size: 18909
     - path: config/config.yaml
-      md5: 1a80c24e5dc44f1b9dbc9ffef69db70f
-      size: 426
+      md5: ae20c6f7cd8c3447a3d188d18a7f5420
+      size: 460
     - path: logs/running_logs.log
-      md5: 23387bd57e60aa34057cd056f1cc7a7b
+      md5: 36fee9b751fe71849040de4c6e43647a
       size: 826
     - path: src/stage_02_data_exception_handle.py
-      md5: 452ff3facbd0a6e42c512e961aaef62a
-      size: 2355
+      md5: a2c6b07fea92c43545e77eaf343469cd
+      size: 2433
     - path: src/utils/all_utils.py
       md5: dd6608c8a3e314435aed7759830c9f01
       size: 718
@@ -836,3 +836,283 @@ stages:
     - path: artifacts/modified_data_dir/walking/dataset9.csv
       md5: e1a4bfa874093be1fd625c830d244140
       size: 19312
+  merge_data:
+    cmd: python src/stage_03_merge_all_data.py --config=config/config.yaml
+    deps:
+    - path: artifacts/modified_data_dir/bending1/dataset1.csv
+      md5: 7e66ae5c251fa7816215cffa125acd8b
+      size: 18913
+    - path: artifacts/modified_data_dir/bending1/dataset2.csv
+      md5: a4487adcbaf6ae3eeb284a85ac92d9aa
+      size: 18952
+    - path: artifacts/modified_data_dir/bending1/dataset3.csv
+      md5: 4ed0a1c06c99bd74146b27b7e78d6f86
+      size: 18884
+    - path: artifacts/modified_data_dir/bending1/dataset4.csv
+      md5: 4080a5aab5f143d4b75d77793eee0822
+      size: 19188
+    - path: artifacts/modified_data_dir/bending1/dataset5.csv
+      md5: e303e24e116d122295e5278c02e4f5d2
+      size: 19053
+    - path: artifacts/modified_data_dir/bending1/dataset6.csv
+      md5: 44598519f49e3c5e3187f2044f18498a
+      size: 19150
+    - path: artifacts/modified_data_dir/bending1/dataset7.csv
+      md5: 7d49345ee5d464b8b2cfc551a74368b2
+      size: 19039
+    - path: artifacts/modified_data_dir/bending2/dataset1.csv
+      md5: 38e94857d63341a9a3d66ff89673079e
+      size: 19247
+    - path: artifacts/modified_data_dir/bending2/dataset2.csv
+      md5: be810e44ecb97777d2134f2702ba6113
+      size: 19243
+    - path: artifacts/modified_data_dir/bending2/dataset3.csv
+      md5: d1996aafae87d6e0482d2fea7730f5d8
+      size: 19062
+    - path: artifacts/modified_data_dir/bending2/dataset4.csv
+      md5: 341b669fc37a81a5441139a5a7a2c736
+      size: 7747
+    - path: artifacts/modified_data_dir/bending2/dataset5.csv
+      md5: c71973f5665da4f0d1eef74b849cdd94
+      size: 18976
+    - path: artifacts/modified_data_dir/bending2/dataset6.csv
+      md5: d81ecaf9b8a619062005a5cf3c125f3e
+      size: 18999
+    - path: artifacts/modified_data_dir/cycling/dataset1.csv
+      md5: 1bce4f6ffcab13af8d527187eb5ea710
+      size: 19172
+    - path: artifacts/modified_data_dir/cycling/dataset10.csv
+      md5: 6ec4f526ecd57b870de10ff47b6ee665
+      size: 19144
+    - path: artifacts/modified_data_dir/cycling/dataset11.csv
+      md5: 671ac1e9c9ec22f64b30a0daa0386851
+      size: 19199
+    - path: artifacts/modified_data_dir/cycling/dataset12.csv
+      md5: 0524ee092d45cff918c544022b10e603
+      size: 19244
+    - path: artifacts/modified_data_dir/cycling/dataset13.csv
+      md5: 55cddc912662dc204ad78f8b90ffa622
+      size: 19174
+    - path: artifacts/modified_data_dir/cycling/dataset14.csv
+      md5: 39f93ad7a7a1e129f4bf8e6f0348f6b9
+      size: 19146
+    - path: artifacts/modified_data_dir/cycling/dataset15.csv
+      md5: 1bce4f6ffcab13af8d527187eb5ea710
+      size: 19172
+    - path: artifacts/modified_data_dir/cycling/dataset2.csv
+      md5: cc617f76f926723cf15ad788d6911527
+      size: 19142
+    - path: artifacts/modified_data_dir/cycling/dataset3.csv
+      md5: 62ceb95d4097c526d249ae662124d95f
+      size: 19144
+    - path: artifacts/modified_data_dir/cycling/dataset4.csv
+      md5: 4a8a66b968feb6981e4455502101c1f5
+      size: 19219
+    - path: artifacts/modified_data_dir/cycling/dataset5.csv
+      md5: dfcdabf83d0738f1c7ea3afe717000ba
+      size: 19214
+    - path: artifacts/modified_data_dir/cycling/dataset6.csv
+      md5: a4c204a1a09bd4653f8e8ea969ae126b
+      size: 19207
+    - path: artifacts/modified_data_dir/cycling/dataset7.csv
+      md5: c44dabb5fb7bc41590dda7e6cd74ed6f
+      size: 19223
+    - path: artifacts/modified_data_dir/cycling/dataset8.csv
+      md5: 5ebb390a08d5d69558e9f35fd4d55198
+      size: 19159
+    - path: artifacts/modified_data_dir/cycling/dataset9.csv
+      md5: 32ea10e8f60635bf97b5d662a8c1b9b5
+      size: 19126
+    - path: artifacts/modified_data_dir/lying/dataset1.csv
+      md5: 0a83db5d147c6467e022a6c2a147386d
+      size: 17003
+    - path: artifacts/modified_data_dir/lying/dataset10.csv
+      md5: ac08c244d52ea64d26325f6e9c23e445
+      size: 17004
+    - path: artifacts/modified_data_dir/lying/dataset11.csv
+      md5: 9ca30ce72bfee7670c54ffaa637cfe1a
+      size: 16542
+    - path: artifacts/modified_data_dir/lying/dataset12.csv
+      md5: a736d4e93cf96a97f2e94a36ac183aec
+      size: 17044
+    - path: artifacts/modified_data_dir/lying/dataset13.csv
+      md5: e31d67826b9612c75566eff13d511ce8
+      size: 17139
+    - path: artifacts/modified_data_dir/lying/dataset14.csv
+      md5: cc27db3a66797d289e48e88bac86a1ff
+      size: 17404
+    - path: artifacts/modified_data_dir/lying/dataset15.csv
+      md5: 0a83db5d147c6467e022a6c2a147386d
+      size: 17003
+    - path: artifacts/modified_data_dir/lying/dataset2.csv
+      md5: 2dfe6d7990424c8a2d5f0d8623a3a6bd
+      size: 16515
+    - path: artifacts/modified_data_dir/lying/dataset3.csv
+      md5: 9ca30ce72bfee7670c54ffaa637cfe1a
+      size: 16542
+    - path: artifacts/modified_data_dir/lying/dataset4.csv
+      md5: 4b04d621cde012b3f08b4aabba778ab5
+      size: 16839
+    - path: artifacts/modified_data_dir/lying/dataset5.csv
+      md5: a736d4e93cf96a97f2e94a36ac183aec
+      size: 17044
+    - path: artifacts/modified_data_dir/lying/dataset6.csv
+      md5: 00db7e3c5d12811c843c2feede791aa9
+      size: 17264
+    - path: artifacts/modified_data_dir/lying/dataset7.csv
+      md5: e31d67826b9612c75566eff13d511ce8
+      size: 17139
+    - path: artifacts/modified_data_dir/lying/dataset8.csv
+      md5: 08f18590321e2752e6ca2d8f41222642
+      size: 17342
+    - path: artifacts/modified_data_dir/lying/dataset9.csv
+      md5: cc27db3a66797d289e48e88bac86a1ff
+      size: 17404
+    - path: artifacts/modified_data_dir/sitting/dataset1.csv
+      md5: 04b94360c34e1bc98851f202b25c6375
+      size: 18597
+    - path: artifacts/modified_data_dir/sitting/dataset10.csv
+      md5: 36571b01482bafc88c7445c1cac8cea4
+      size: 18573
+    - path: artifacts/modified_data_dir/sitting/dataset11.csv
+      md5: cdb2215f8a348f184ec746375cf1afc5
+      size: 18685
+    - path: artifacts/modified_data_dir/sitting/dataset12.csv
+      md5: 85cb5edfba6d775f81b99667208e321f
+      size: 18396
+    - path: artifacts/modified_data_dir/sitting/dataset13.csv
+      md5: 52c6a5f4eed7d094a9b8fbbbab4a1d63
+      size: 18302
+    - path: artifacts/modified_data_dir/sitting/dataset14.csv
+      md5: faaf07a9cb7cf1752224b52baf537882
+      size: 18532
+    - path: artifacts/modified_data_dir/sitting/dataset15.csv
+      md5: e47624bfebb09a5bcfa860e01f75431d
+      size: 18707
+    - path: artifacts/modified_data_dir/sitting/dataset2.csv
+      md5: 4cab77618ac39c11db0b82915e929b07
+      size: 18550
+    - path: artifacts/modified_data_dir/sitting/dataset3.csv
+      md5: 185cd3a80127417bc9d304a795b9a9b2
+      size: 18552
+    - path: artifacts/modified_data_dir/sitting/dataset4.csv
+      md5: ccd67976355a90fd107a83ebe1e11edc
+      size: 18532
+    - path: artifacts/modified_data_dir/sitting/dataset5.csv
+      md5: ef42cb2fb325780eb447e590d3cda8bb
+      size: 18492
+    - path: artifacts/modified_data_dir/sitting/dataset6.csv
+      md5: 77e87506527ea9a0fc3f8099c778c1c0
+      size: 18474
+    - path: artifacts/modified_data_dir/sitting/dataset7.csv
+      md5: 1b3180ebac92d09e6352c505ad3f325f
+      size: 18511
+    - path: artifacts/modified_data_dir/sitting/dataset8.csv
+      md5: 2526917febffdb4d4c02fbbabf6e623f
+      size: 18582
+    - path: artifacts/modified_data_dir/sitting/dataset9.csv
+      md5: 078b1602ff0a0904afe7a1e9ec2c8e6c
+      size: 18481
+    - path: artifacts/modified_data_dir/standing/dataset1.csv
+      md5: 7c99040af7121cf2b9d5cd0770c024e4
+      size: 19025
+    - path: artifacts/modified_data_dir/standing/dataset10.csv
+      md5: 453506d73dd80704c5693724ad0bc935
+      size: 19105
+    - path: artifacts/modified_data_dir/standing/dataset11.csv
+      md5: 60c6a4f1030b9ecd7de8c2c7b97efe7a
+      size: 19146
+    - path: artifacts/modified_data_dir/standing/dataset12.csv
+      md5: cddc4c4adcf15d68b673c021cf6070e6
+      size: 19105
+    - path: artifacts/modified_data_dir/standing/dataset13.csv
+      md5: 105e84c79a256414b1bdf0b626a6a39c
+      size: 19020
+    - path: artifacts/modified_data_dir/standing/dataset14.csv
+      md5: 8a0f0fc152f4f6eed2373b6052fc6a33
+      size: 18947
+    - path: artifacts/modified_data_dir/standing/dataset15.csv
+      md5: 33dd03683065a15d4100b6ee5f461ba6
+      size: 19053
+    - path: artifacts/modified_data_dir/standing/dataset2.csv
+      md5: 35292ca0e8ebcc5859b98ea0aea0352d
+      size: 19165
+    - path: artifacts/modified_data_dir/standing/dataset3.csv
+      md5: 38e1ae40844136fe0cda12c08bb39134
+      size: 19180
+    - path: artifacts/modified_data_dir/standing/dataset4.csv
+      md5: 3198e5885a8efcf7e133d573e3fc8888
+      size: 19046
+    - path: artifacts/modified_data_dir/standing/dataset5.csv
+      md5: 7cc047e328294260a13156fb910ec454
+      size: 19107
+    - path: artifacts/modified_data_dir/standing/dataset6.csv
+      md5: 5d7065808553ba95120a3327bc670c31
+      size: 19091
+    - path: artifacts/modified_data_dir/standing/dataset7.csv
+      md5: fb1b4303a04e4ef89cb6ee9105f93ee9
+      size: 19056
+    - path: artifacts/modified_data_dir/standing/dataset8.csv
+      md5: 291eb8ecef29ac8b14770aaa30bcf374
+      size: 19068
+    - path: artifacts/modified_data_dir/standing/dataset9.csv
+      md5: c445f49111ae5b9864f8e941e242b138
+      size: 19175
+    - path: artifacts/modified_data_dir/walking/dataset1.csv
+      md5: aabe09315fa46a425a984369439c8a5e
+      size: 19215
+    - path: artifacts/modified_data_dir/walking/dataset10.csv
+      md5: 1977468253ec8b6948b1fe0aa12fd8e7
+      size: 19255
+    - path: artifacts/modified_data_dir/walking/dataset11.csv
+      md5: f0552935453e8612322023a7441eea74
+      size: 19258
+    - path: artifacts/modified_data_dir/walking/dataset12.csv
+      md5: cfae820715d8a7825da45549afee8ccb
+      size: 19268
+    - path: artifacts/modified_data_dir/walking/dataset13.csv
+      md5: ce10c1746044206a19bf870d51afe5bd
+      size: 19242
+    - path: artifacts/modified_data_dir/walking/dataset14.csv
+      md5: 3ef6e70e1b41a6bff2e9584479cb3f29
+      size: 19228
+    - path: artifacts/modified_data_dir/walking/dataset15.csv
+      md5: 522a7e16e2b03997afd4dea96205e7e2
+      size: 19303
+    - path: artifacts/modified_data_dir/walking/dataset2.csv
+      md5: 166d0d0737def5511924204cd88a8bd2
+      size: 19218
+    - path: artifacts/modified_data_dir/walking/dataset3.csv
+      md5: 335d7fa1f4c2cd9fbfc064d3b8fc1c77
+      size: 19226
+    - path: artifacts/modified_data_dir/walking/dataset4.csv
+      md5: d964dcd72d19fc60ab7d7b4ba792784d
+      size: 19272
+    - path: artifacts/modified_data_dir/walking/dataset5.csv
+      md5: 1a7e6c8f3f76724470159ffb99125048
+      size: 19234
+    - path: artifacts/modified_data_dir/walking/dataset6.csv
+      md5: 5973cfd77a252e8970367a88a6aed722
+      size: 19277
+    - path: artifacts/modified_data_dir/walking/dataset7.csv
+      md5: 7d7d0c135233dbc3b293a20ac79a7db8
+      size: 19299
+    - path: artifacts/modified_data_dir/walking/dataset8.csv
+      md5: af000720f1f55bf7a819f8fabadc7ea5
+      size: 19234
+    - path: artifacts/modified_data_dir/walking/dataset9.csv
+      md5: e1a4bfa874093be1fd625c830d244140
+      size: 19312
+    - path: config/config.yaml
+      md5: ae20c6f7cd8c3447a3d188d18a7f5420
+      size: 460
+    - path: src/stage_03_merge_all_data.py
+      md5: a2a416b79654790dd528f430eec1354c
+      size: 2365
+    - path: src/utils/all_utils.py
+      md5: dd6608c8a3e314435aed7759830c9f01
+      size: 718
+    outs:
+    - path: artifacts/merge_data_dir/data.csv
+      md5: 6296f70380a776d3be288f76fe9b6487
+      size: 1626633

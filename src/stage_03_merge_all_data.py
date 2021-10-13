@@ -17,19 +17,22 @@ logging.basicConfig(filename=os.path.join(log_dir, 'running_logs.log'), level=lo
                     filemode="a")
 
 
-def handle_data_exception(config_path):
+def merge_data(config_path):
     config = read_yaml(config_path)
 
     artifacts_dir = config['artifacts']['artifacts_dir']
-    raw_local_dir = config['artifacts']['raw_local_dir']
+
     modified_data_dir = config['artifacts']['modified_data_dir']
+    merge_data_dir = config['artifacts']['merge_data_dir']
+    raw_local_file = config['artifacts']['raw_local_file']
 
-    raw_data_local_dir = os.path.join(artifacts_dir, raw_local_dir)
     modified_data_save_dir = os.path.join(artifacts_dir, modified_data_dir)
+    merge_data_save_dir = os.path.join(artifacts_dir, merge_data_dir)
+    merge_data_save_file_name = os.path.join(merge_data_save_dir, raw_local_file)
     
-    create_directory(dirs=[modified_data_save_dir])
+    create_directory(dirs=[merge_data_save_dir])
 
-    folders = os.listdir(raw_data_local_dir)
+    folders = os.listdir(modified_data_save_dir)
 
     folder_name = []
     ignore_files = ['.gitignore']
@@ -39,20 +42,20 @@ def handle_data_exception(config_path):
         if l == 1 and folder not in ignore_files:
             folder_name.append(folder)
     
+    frames = []
     for folder in folder_name:
-        file_path = os.path.join(raw_data_local_dir,folder)
+        file_path = os.path.join(modified_data_save_dir,folder)
         files = os.listdir(file_path)
         for data in files:
             if data not in ignore_files:
-                data_path = os.path.join(raw_data_local_dir,folder,data)
-                df = pd.read_csv(data_path, skiprows=4,error_bad_lines=False)
-                df.drop(columns=['# Columns: time'], inplace = True)
-                df['label'] = folder
-                os.makedirs(modified_data_save_dir+'/'+folder, exist_ok=True)
-                save_data = os.path.join(modified_data_save_dir,folder,data)
-                df.to_csv(save_data, sep=',', index = False)
+                data_path = os.path.join(modified_data_save_dir,folder,data)
+                df = pd.read_csv(data_path)
+                frames.append(df)
+    
+    results = pd.concat(frames)
+    results.to_csv(merge_data_save_file_name, sep=',', index = False)
 
-    logging.info(f'Data has been modified successfully to {modified_data_save_dir}')
+    logging.info(f'Data has been merged successfully to {merge_data_save_dir}')
 
 
 
@@ -62,9 +65,9 @@ if __name__ == '__main__':
     parsed_args = args.parse_args()
     
     try:
-        logging.info(">>>>> stage_02 started")
-        handle_data_exception(config_path = parsed_args.config)
-        logging.info("stage_02 completed!>>>>>")
+        logging.info(">>>>> stage_03 started")
+        merge_data(config_path = parsed_args.config)
+        logging.info("stage_03 completed!>>>>>")
     except Exception as e:
         logging.exception(e)
         raise e

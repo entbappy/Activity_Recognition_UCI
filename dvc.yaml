@@ -285,4 +285,102 @@ stages:
       - artifacts/modified_data_dir/walking/dataset14.csv
       - artifacts/modified_data_dir/walking/dataset15.csv
 
+  merge_data:
+    cmd: python src/stage_03_merge_all_data.py --config=config/config.yaml
+    deps:
+      - src/stage_03_merge_all_data.py
+      - src/utils/all_utils.py
+      - config/config.yaml
+      - artifacts/modified_data_dir/bending1/dataset1.csv
+      - artifacts/modified_data_dir/bending1/dataset2.csv
+      - artifacts/modified_data_dir/bending1/dataset3.csv
+      - artifacts/modified_data_dir/bending1/dataset4.csv
+      - artifacts/modified_data_dir/bending1/dataset5.csv
+      - artifacts/modified_data_dir/bending1/dataset6.csv
+      - artifacts/modified_data_dir/bending1/dataset7.csv
+      - artifacts/modified_data_dir/bending2/dataset1.csv
+      - artifacts/modified_data_dir/bending2/dataset2.csv
+      - artifacts/modified_data_dir/bending2/dataset3.csv
+      - artifacts/modified_data_dir/bending2/dataset4.csv
+      - artifacts/modified_data_dir/bending2/dataset5.csv
+      - artifacts/modified_data_dir/bending2/dataset6.csv
+      - artifacts/modified_data_dir/cycling/dataset1.csv
+      - artifacts/modified_data_dir/cycling/dataset2.csv
+      - artifacts/modified_data_dir/cycling/dataset3.csv
+      - artifacts/modified_data_dir/cycling/dataset4.csv
+      - artifacts/modified_data_dir/cycling/dataset5.csv
+      - artifacts/modified_data_dir/cycling/dataset6.csv
+      - artifacts/modified_data_dir/cycling/dataset7.csv
+      - artifacts/modified_data_dir/cycling/dataset8.csv
+      - artifacts/modified_data_dir/cycling/dataset9.csv
+      - artifacts/modified_data_dir/cycling/dataset10.csv
+      - artifacts/modified_data_dir/cycling/dataset11.csv
+      - artifacts/modified_data_dir/cycling/dataset12.csv
+      - artifacts/modified_data_dir/cycling/dataset13.csv
+      - artifacts/modified_data_dir/cycling/dataset14.csv
+      - artifacts/modified_data_dir/cycling/dataset15.csv
+      - artifacts/modified_data_dir/lying/dataset1.csv
+      - artifacts/modified_data_dir/lying/dataset2.csv
+      - artifacts/modified_data_dir/lying/dataset3.csv
+      - artifacts/modified_data_dir/lying/dataset4.csv
+      - artifacts/modified_data_dir/lying/dataset5.csv
+      - artifacts/modified_data_dir/lying/dataset6.csv
+      - artifacts/modified_data_dir/lying/dataset7.csv
+      - artifacts/modified_data_dir/lying/dataset8.csv
+      - artifacts/modified_data_dir/lying/dataset9.csv
+      - artifacts/modified_data_dir/lying/dataset10.csv
+      - artifacts/modified_data_dir/lying/dataset11.csv
+      - artifacts/modified_data_dir/lying/dataset12.csv
+      - artifacts/modified_data_dir/lying/dataset13.csv
+      - artifacts/modified_data_dir/lying/dataset14.csv
+      - artifacts/modified_data_dir/lying/dataset15.csv
+      - artifacts/modified_data_dir/sitting/dataset1.csv
+      - artifacts/modified_data_dir/sitting/dataset2.csv
+      - artifacts/modified_data_dir/sitting/dataset3.csv
+      - artifacts/modified_data_dir/sitting/dataset4.csv
+      - artifacts/modified_data_dir/sitting/dataset5.csv
+      - artifacts/modified_data_dir/sitting/dataset6.csv
+      - artifacts/modified_data_dir/sitting/dataset7.csv
+      - artifacts/modified_data_dir/sitting/dataset8.csv
+      - artifacts/modified_data_dir/sitting/dataset9.csv
+      - artifacts/modified_data_dir/sitting/dataset10.csv
+      - artifacts/modified_data_dir/sitting/dataset11.csv
+      - artifacts/modified_data_dir/sitting/dataset12.csv
+      - artifacts/modified_data_dir/sitting/dataset13.csv
+      - artifacts/modified_data_dir/sitting/dataset14.csv
+      - artifacts/modified_data_dir/sitting/dataset15.csv
+      - artifacts/modified_data_dir/standing/dataset1.csv
+      - artifacts/modified_data_dir/standing/dataset2.csv
+      - artifacts/modified_data_dir/standing/dataset3.csv
+      - artifacts/modified_data_dir/standing/dataset4.csv
+      - artifacts/modified_data_dir/standing/dataset5.csv
+      - artifacts/modified_data_dir/standing/dataset6.csv
+      - artifacts/modified_data_dir/standing/dataset7.csv
+      - artifacts/modified_data_dir/standing/dataset8.csv
+      - artifacts/modified_data_dir/standing/dataset9.csv
+      - artifacts/modified_data_dir/standing/dataset10.csv
+      - artifacts/modified_data_dir/standing/dataset11.csv
+      - artifacts/modified_data_dir/standing/dataset12.csv
+      - artifacts/modified_data_dir/standing/dataset13.csv
+      - artifacts/modified_data_dir/standing/dataset14.csv
+      - artifacts/modified_data_dir/standing/dataset15.csv
+      - artifacts/modified_data_dir/walking/dataset1.csv
+      - artifacts/modified_data_dir/walking/dataset2.csv
+      - artifacts/modified_data_dir/walking/dataset3.csv
+      - artifacts/modified_data_dir/walking/dataset4.csv
+      - artifacts/modified_data_dir/walking/dataset5.csv
+      - artifacts/modified_data_dir/walking/dataset6.csv
+      - artifacts/modified_data_dir/walking/dataset7.csv
+      - artifacts/modified_data_dir/walking/dataset8.csv
+      - artifacts/modified_data_dir/walking/dataset9.csv
+      - artifacts/modified_data_dir/walking/dataset10.csv
+      - artifacts/modified_data_dir/walking/dataset11.csv
+      - artifacts/modified_data_dir/walking/dataset12.csv
+      - artifacts/modified_data_dir/walking/dataset13.csv
+      - artifacts/modified_data_dir/walking/dataset14.csv
+      - artifacts/modified_data_dir/walking/dataset15.csv
+
+    outs:
+      - artifacts/merge_data_dir/data.csv
+
 
