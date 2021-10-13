@@ -33,18 +33,24 @@ data_source: https://archive.ics.uci.edu/ml/machine-learning-databases/00366/ARe
 
 # STEPS:
 
-## STEP 01: create and activate conda environment
+## STEP 01: Clone the repository
+
+```bash
+git clone https://github.com/entbappy/Activity_Recognition_UCI.git
+```
+
+## STEP 02: create and activate conda environment
 
 ```bash
 conda create -n activity python=3.7 -y
 conda activate activity
 ```
-## STEP 02: install requirements.txt
+## STEP 03: install requirements.txt
 ```bash
 pip install -r requirements.txt
 ```
 
-## STEP 03: run the dvc repro command
+## STEP 04: run the dvc repro command
 ```bash
 dvc repro
 ```
