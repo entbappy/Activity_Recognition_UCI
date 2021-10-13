@@ -2,6 +2,7 @@
 Activity Recognition system based on Multisensor data fusion (AReM) Data Set 
 
 Link of Data: https://archive.ics.uci.edu/ml/machine-learning-databases/00366/AReM.zip
+
 Link of UCI: https://archive.ics.uci.edu/ml/datasets/Activity+Recognition+system+based+on+Multisensor+data+fusion+%2528AReM%2529#
 
 ## Data Set Information:
@@ -26,7 +27,7 @@ We also consider two kind of bending activity, illustrated in the figure provide
 DVC has been used to automated this project
 
 ## Reference repo:
-https://github.com/entbappy/Activity_Recognition_UCI
+Github: https://github.com/entbappy/Activity_Recognition_UCI
 
 data_source: https://archive.ics.uci.edu/ml/machine-learning-databases/00366/AReM.zip
 
