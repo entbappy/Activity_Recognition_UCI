@@ -403,4 +403,18 @@ stages:
     outs:
       - artifacts/clean_data_dir/data.csv
 
+  split_data:
+    cmd: python src/stage_06_split_data.py --config=config/config.yaml --params=params.yaml
+    deps:
+      - src/stage_06_split_data.py
+      - src/utils/all_utils.py
+      - config/config.yaml
+      - artifacts/clean_data_dir/data.csv
+    params: 
+      - base.test_size
+      - base.random_state
+    outs:
+      - artifacts/split_data_dir/train.csv
+      - artifacts/split_data_dir/test.csv
+
 
