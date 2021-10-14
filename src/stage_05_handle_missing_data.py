@@ -41,6 +41,20 @@ def handle_missing_value(config_path):
     df.dropna(inplace=True)
     logging.info(f'Data shape after null removed:{df.shape}')
     logging.info(f'Data shape after null removed:{df.isnull().sum()}')
+
+    #Encoding the label 
+    label = {
+    'bending1': 1,
+    'bending2': 2,
+    'cycling': 3,
+    'lying': 4,
+    'sitting': 5,
+    'standing': 6,
+    'walking': 7
+    }
+
+    df['label'] = df['label'].map(label)
+    logging.info(f'Label has been encoded: {label}')
     
     df.to_csv(clean_data_file, sep=',', index = False)
     
