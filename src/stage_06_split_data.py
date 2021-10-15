@@ -53,7 +53,7 @@ def split_data(config_path,params_path):
         save_local_df(data, data_path)
 
     
-    logging.info(f'Data has been splited successfully to {os.path.join(artifacts_dir,split_data_dir)}')
+    logging.info(f'Data has been splitted successfully to {os.path.join(artifacts_dir,split_data_dir)}')
 
 
 

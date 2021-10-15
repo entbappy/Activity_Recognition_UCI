@@ -563,7 +563,7 @@ stages:
       md5: 45781688c23a5eb070512fc2cd3e86e7
       size: 566
     - path: logs/running_logs.log
-      md5: 2636eb9af4adc92ec6fdd776ec0d5129
+      md5: c162e297bbf5bbc57e8f7a031fb758c1
       size: 826
     - path: src/stage_02_data_exception_handle.py
       md5: a2c6b07fea92c43545e77eaf343469cd
@@ -1167,8 +1167,8 @@ stages:
       md5: 45781688c23a5eb070512fc2cd3e86e7
       size: 566
     - path: src/stage_06_split_data.py
-      md5: abcacb0e2716478f1126fb9c6c3ff685
-      size: 2423
+      md5: c7f259101faf6afe405d85f79bd9f6f4
+      size: 2424
     - path: src/utils/all_utils.py
       md5: dd6608c8a3e314435aed7759830c9f01
       size: 718
@@ -1183,3 +1183,22 @@ stages:
     - path: artifacts/split_data_dir/train.csv
       md5: 0dbc8c2b4be3f83e9d9264c819714d25
       size: 958900
+  train:
+    cmd: python src/stage_07_train.py --config=config/config.yaml --params=params.yaml
+    deps:
+    - path: artifacts/split_data_dir/train.csv
+      md5: 0dbc8c2b4be3f83e9d9264c819714d25
+      size: 958900
+    - path: config/config.yaml
+      md5: 45781688c23a5eb070512fc2cd3e86e7
+      size: 566
+    - path: src/stage_07_train.py
+      md5: ece640b72c7a74843c07308a99bf37a1
+      size: 2525
+    - path: src/utils/all_utils.py
+      md5: dd6608c8a3e314435aed7759830c9f01
+      size: 718
+    outs:
+    - path: artifacts/model_dir/logistic.model
+      md5: 72b149cf44a3d0068c7f0a44b3af76f8
+      size: 1317

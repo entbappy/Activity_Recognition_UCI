@@ -417,4 +417,14 @@ stages:
       - artifacts/split_data_dir/train.csv
       - artifacts/split_data_dir/test.csv
 
+  train:
+    cmd: python src/stage_07_train.py --config=config/config.yaml --params=params.yaml
+    deps:
+      - src/stage_07_train.py
+      - src/utils/all_utils.py
+      - config/config.yaml
+      - artifacts/split_data_dir/train.csv
+    outs:
+      - artifacts/model_dir/logistic.model
+
 
