@@ -4,8 +4,8 @@ stages:
     cmd: python src/stage_01_download_remote_data.py --config=config/config.yaml
     deps:
     - path: config/config.yaml
-      md5: 45781688c23a5eb070512fc2cd3e86e7
-      size: 566
+      md5: de0de6349976e536e82b602108abd9cb
+      size: 565
     - path: src/stage_01_download_remote_data.py
       md5: d6d9008c3bbe851229ebc345d2a267d5
       size: 1919
@@ -284,7 +284,7 @@ stages:
       md5: 15c173c7b7321e53e91763742dea1701
       size: 18909
     - path: logs/running_logs.log
-      md5: 08962ef0245902cbc571b2b512cbaef9
+      md5: 2a69a1324bcfc7ee3dcf493797822081
       size: 513
   handle_data:
     cmd: python src/stage_02_data_exception_handle.py --config=config/config.yaml
@@ -560,10 +560,10 @@ stages:
       md5: 15c173c7b7321e53e91763742dea1701
       size: 18909
     - path: config/config.yaml
-      md5: 45781688c23a5eb070512fc2cd3e86e7
-      size: 566
+      md5: de0de6349976e536e82b602108abd9cb
+      size: 565
     - path: logs/running_logs.log
-      md5: c162e297bbf5bbc57e8f7a031fb758c1
+      md5: cdb4e6366d7e1bf68c23cdc910030514
       size: 826
     - path: src/stage_02_data_exception_handle.py
       md5: a2c6b07fea92c43545e77eaf343469cd
@@ -1104,8 +1104,8 @@ stages:
       md5: e1a4bfa874093be1fd625c830d244140
       size: 19312
     - path: config/config.yaml
-      md5: 45781688c23a5eb070512fc2cd3e86e7
-      size: 566
+      md5: de0de6349976e536e82b602108abd9cb
+      size: 565
     - path: src/stage_03_merge_all_data.py
       md5: a2a416b79654790dd528f430eec1354c
       size: 2365
@@ -1123,8 +1123,8 @@ stages:
       md5: 6296f70380a776d3be288f76fe9b6487
       size: 1626633
     - path: config/config.yaml
-      md5: 45781688c23a5eb070512fc2cd3e86e7
-      size: 566
+      md5: de0de6349976e536e82b602108abd9cb
+      size: 565
     - path: src/stage_04_EDA.py
       md5: 98d5642fce1043d1a611b8a23791b313
       size: 1933
@@ -1133,20 +1133,20 @@ stages:
       size: 718
     outs:
     - path: artifacts/EDA_reports_dir/EDA_Reports.html
-      md5: b9303ddceddbba261b1e9fa5eefa2312
-      size: 2473004
+      md5: 2f22e5b7f97d503413f9e670efcb3c48
+      size: 2472910
   missing_value:
     cmd: python src/stage_05_handle_missing_data.py --config=config/config.yaml
     deps:
     - path: artifacts/EDA_reports_dir/EDA_Reports.html
-      md5: b9303ddceddbba261b1e9fa5eefa2312
-      size: 2473004
+      md5: 2f22e5b7f97d503413f9e670efcb3c48
+      size: 2472910
     - path: artifacts/merge_data_dir/data.csv
       md5: 6296f70380a776d3be288f76fe9b6487
       size: 1626633
     - path: config/config.yaml
-      md5: 45781688c23a5eb070512fc2cd3e86e7
-      size: 566
+      md5: de0de6349976e536e82b602108abd9cb
+      size: 565
     - path: src/stage_05_handle_missing_data.py
       md5: 050aab9d0675f34a2ac336a45d2ea624
       size: 2315
@@ -1164,8 +1164,8 @@ stages:
       md5: d861958525d14915976c8f7226e88677
       size: 1369851
     - path: config/config.yaml
-      md5: 45781688c23a5eb070512fc2cd3e86e7
-      size: 566
+      md5: de0de6349976e536e82b602108abd9cb
+      size: 565
     - path: src/stage_06_split_data.py
       md5: c7f259101faf6afe405d85f79bd9f6f4
       size: 2424
@@ -1190,8 +1190,8 @@ stages:
       md5: 0dbc8c2b4be3f83e9d9264c819714d25
       size: 958900
     - path: config/config.yaml
-      md5: 45781688c23a5eb070512fc2cd3e86e7
-      size: 566
+      md5: de0de6349976e536e82b602108abd9cb
+      size: 565
     - path: src/stage_07_train.py
       md5: ece640b72c7a74843c07308a99bf37a1
       size: 2525
@@ -1202,3 +1202,25 @@ stages:
     - path: artifacts/model_dir/logistic.model
       md5: 72b149cf44a3d0068c7f0a44b3af76f8
       size: 1317
+  evaluate:
+    cmd: python src/stage_08_evaluate.py --config=config/config.yaml --params=params.yaml
+    deps:
+    - path: artifacts/model_dir/logistic.model
+      md5: 72b149cf44a3d0068c7f0a44b3af76f8
+      size: 1317
+    - path: artifacts/split_data_dir/test.csv
+      md5: 8de7d18f296180bfe512ad93f4249766
+      size: 411018
+    - path: config/config.yaml
+      md5: de0de6349976e536e82b602108abd9cb
+      size: 565
+    - path: src/stage_08_evaluate.py
+      md5: 1dee631445157069d209b66823e4ad30
+      size: 2763
+    - path: src/utils/all_utils.py
+      md5: dd6608c8a3e314435aed7759830c9f01
+      size: 718
+    outs:
+    - path: artifacts/reports_dir/scores.txt
+      md5: f1e32b4a31128228904e82851b51f02e
+      size: 609

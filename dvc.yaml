@@ -427,4 +427,15 @@ stages:
     outs:
       - artifacts/model_dir/logistic.model
 
+  evaluate:
+    cmd: python src/stage_08_evaluate.py --config=config/config.yaml --params=params.yaml
+    deps:
+      - src/stage_08_evaluate.py
+      - src/utils/all_utils.py
+      - config/config.yaml
+      - artifacts/split_data_dir/test.csv
+      - artifacts/model_dir/logistic.model
+    outs:
+      - artifacts/reports_dir/scores.txt
+
 
